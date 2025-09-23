@@ -9,7 +9,7 @@ ux-mockups-final/
 ├── web-mockup/          # Aplicación web Angular
 │   ├── src/
 │   ├── package.json
-│   └── README.md
+│   └── README.md        # Documentación detallada
 └── README.md           # Este archivo
 ```
 
@@ -18,27 +18,23 @@ ux-mockups-final/
 ### Web Mockup (`web-mockup/`)
 Aplicación web desarrollada en Angular que simula la interfaz de usuario de UX Mockups.
 
-**Características:**
+**Características principales:**
 - Sistema de autenticación (login/signup)
-- Dashboard principal
-- Gestión de plantillas de alarmas
+- Dashboard principal con navegación responsiva
+- Gestión de plantillas de alarmas (CRUD)
 - Integraciones externas (GitHub, GitLab, Jira)
-- Sistema de notificaciones
-- Diseño responsivo
+- Sistema de notificaciones con IA
+- Diseño responsivo mobile-first
 
 **Tecnologías:**
 - Angular 18
-- Angular Material
+- Angular Material 3
 - TypeScript
 - SCSS
 
-## Instalación y Desarrollo
+## Inicio Rápido
 
-### Prerrequisitos
-- Node.js (versión 18 o superior)
-- npm o yarn
-
-### Configuración del Proyecto Web
+Para ejecutar la aplicación web:
 
 ```bash
 cd web-mockup
@@ -46,7 +42,7 @@ npm install
 npm start
 ```
 
-La aplicación estará disponible en `http://localhost:4200`
+**📖 Para instrucciones detalladas de instalación, configuración y desarrollo, consulta el [README del proyecto web](web-mockup/README.md).**
 
 ## Contribución
 
