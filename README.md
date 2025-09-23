@@ -1,6 +1,6 @@
-# UX Mockups - Monorepo
+# Alarmas IT - Monorepo
 
-Este repositorio contiene los mockups y prototipos de la aplicación UX Mockups.
+Este repositorio contiene los mockups y prototipos de la aplicación Alarmas IT.
 
 ## Estructura del Proyecto
 
@@ -16,7 +16,7 @@ ux-mockups-final/
 ## Proyectos Incluidos
 
 ### Web Mockup (`web-mockup/`)
-Aplicación web desarrollada en Angular que simula la interfaz de usuario de UX Mockups.
+Aplicación web desarrollada en Angular que simula la interfaz de usuario de Alarmas IT.
 
 **Características principales:**
 - Sistema de autenticación (login/signup)

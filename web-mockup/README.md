@@ -1,6 +1,6 @@
 # UX Mockups - Aplicación Web
 
-Esta es una aplicación web Angular que sirve como mockup para un sistema de diseño UX, con componentes Material 3 y una interfaz de usuario moderna.
+Esta es una aplicación web Angular que sirve como mockup para la aplicación Alarmas IT, con componentes Material 3 y una interfaz de usuario moderna.
 
 ## Características
 
@@ -17,7 +17,7 @@ Antes de ejecutar esta aplicación, asegúrate de tener instalado lo siguiente:
 
 ### Software Requerido
 
-- **Node.js**: Versión 18.x o superior
+- **Node.js**: Versión 20.19 o superior
   - Descargar desde [nodejs.org](https://nodejs.org/)
   - Verificar instalación: `node --version`
 - **npm**: Generalmente viene con Node.js
