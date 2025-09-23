@@ -18,6 +18,8 @@ ux-mockups-final/
 ### Web Mockup (`web-mockup/`)
 Aplicación web desarrollada en Angular que simula la interfaz de usuario de Alarmas IT.
 
+<img width="1510" height="825" alt="Captura de pantalla 2025-09-23 a la(s) 8 13 10 a m" src="https://github.com/user-attachments/assets/7e7fa966-ffb1-4609-b1bb-378b9be8a7fb" />
+
 **Características principales:**
 - Sistema de autenticación (login/signup)
 - Dashboard principal con navegación responsiva
