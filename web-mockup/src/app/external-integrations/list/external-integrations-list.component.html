@@ -1,0 +1,46 @@
+<!-- Dashboard Card Wrapper -->
+<app-dashboard title="Integraciones Externas">
+  <div class="integrations-container">
+    <div class="integrations-list">
+      <div 
+        *ngFor="let integration of integrations; let last = last" 
+        class="integration-item">
+        
+        <!-- Integration Content -->
+        <div class="integration-content">
+          <!-- Logo -->
+          <div class="integration-logo">
+            <img [src]="integration.logo" [alt]="integration.name" class="logo-image">
+          </div>
+          
+          <!-- Integration Info -->
+          <div class="integration-info">
+            <h3 class="integration-name">{{ integration.name }}</h3>
+            <p class="integration-description">{{ integration.description }}</p>
+          </div>
+          
+          <!-- Action Button -->
+          <div class="integration-actions">
+            <button
+              mat-raised-button
+              [class.connect-button]="integration.buttonType === 'connect'"
+              [class.disconnect-button]="integration.buttonType === 'disconnect'"
+              (click)="onConnect(integration.id)">
+              {{ integration.buttonText }}
+            </button>
+          </div>
+        </div>
+        
+        <!-- Divider (except for last item) -->
+        <mat-divider *ngIf="!last" class="integration-divider"></mat-divider>
+      </div>
+    </div>
+  </div>
+</app-dashboard>
+
+<!-- Success Modal -->
+<app-success-modal 
+  *ngIf="showSuccessModal"
+  [appName]="successAppName"
+  (close)="onCloseSuccessModal()">
+</app-success-modal>

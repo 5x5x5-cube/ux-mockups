@@ -1,0 +1,135 @@
+@use '../../../../assets/_colors' as colors;
+
+.login-container {
+  background-color: colors.$base-color-00;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.app-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 57px;
+  font-weight: 800;
+  line-height: 64px;
+  letter-spacing: -0.25px;
+  color: colors.$secondary-color;
+  margin: 0;
+  text-align: center;
+
+  .title-medium {
+    font-weight: 500;
+  }
+
+  .title-bold {
+    font-weight: 800;
+  }
+}
+
+.login-card {
+  background-color: colors.$white-color;
+  border-radius: 12px;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 444px;
+  box-shadow: none;
+  border: 1px solid #cac4d0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+// Custom Material form field styling to match Figma design
+::ng-deep .mat-mdc-form-field {
+  .mat-mdc-form-field-outline {
+    color: colors.$secondary-color-20;
+  }
+
+  .mat-mdc-form-field-label {
+    color: colors.$secondary-color-20;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+  }
+
+  .mat-mdc-input-element {
+    color: colors.$secondary-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .mat-mdc-form-field-hint {
+    color: #49454f;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+  }
+}
+
+.login-button {
+  background-color: colors.$base-color !important;
+  color: colors.$base-color-05 !important;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  border-radius: 12px;
+  height: 48px;
+  width: 100%;
+  text-transform: none;
+
+  &:hover {
+    background-color: colors.$base-color-130 !important;
+  }
+
+  &:disabled {
+    background-color: #cac4d0 !important;
+    color: #49454f !important;
+  }
+}
+
+.create-account-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.create-account-link {
+  color: colors.$secondary-color;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  text-decoration: underline;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: colors.$base-color;
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: colors.$secondary-color;
+  }
+}

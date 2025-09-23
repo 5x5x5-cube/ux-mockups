@@ -1,0 +1,98 @@
+<!-- Dashboard Card Wrapper -->
+<app-dashboard [title]="templateName">
+  <!-- Form Container -->
+  <div class="form-container">
+    <form [formGroup]="alarmTemplateForm" (ngSubmit)="onSubmit()" class="alarm-form">
+      <!-- Two Column Layout -->
+      <div class="form-columns">
+        <!-- Left Column -->
+        <div class="form-column">
+          <!-- Name Field -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Nombre</mat-label>
+            <input
+              matInput
+              type="text"
+              formControlName="name"
+              placeholder="Ingrese el nombre de la plantilla">
+          </mat-form-field>
+
+          <!-- Alert Level Dropdown -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Nivel de alerta</mat-label>
+            <mat-select formControlName="alertLevel" placeholder="Selecciona el nivel de alerta">
+              <mat-option *ngFor="let level of alertLevels" [value]="level.value">
+                {{ level.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- Right Column -->
+        <div class="form-column">
+          <!-- Schedule Section -->
+          <div class="schedule-section">
+            <h3 class="schedule-title">Horario</h3>
+            
+            <!-- Divider -->
+            <mat-divider class="schedule-divider"></mat-divider>
+            
+            <!-- All Day Checkbox -->
+            <div class="all-day-option">
+              <mat-checkbox
+                [checked]="allDayChecked"
+                (change)="onAllDayChange()"
+                class="all-day-checkbox">
+                Todo el día
+              </mat-checkbox>
+              <p class="all-day-description">
+                Las alarmas se activarán a cualquier hora del día
+              </p>
+            </div>
+
+            <!-- Time Range Fields -->
+            <div class="time-range" [class.disabled]="allDayChecked">
+              <mat-form-field appearance="outline" class="time-field">
+                <mat-label>Desde</mat-label>
+                <input
+                  matInput
+                  type="time"
+                  formControlName="startTime"
+                  [disabled]="allDayChecked">
+              </mat-form-field>
+
+              <div class="time-separator">-</div>
+
+              <mat-form-field appearance="outline" class="time-field">
+                <mat-label>Hasta</mat-label>
+                <input
+                  matInput
+                  type="time"
+                  formControlName="endTime"
+                  [disabled]="allDayChecked">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="form-actions">
+        <button
+          mat-button
+          type="button"
+          class="cancel-button"
+          (click)="onCancel()">
+          Cancelar
+        </button>
+               <button
+                 mat-raised-button
+                 type="submit"
+                 class="create-button"
+                 [disabled]="!alarmTemplateForm.valid">
+                 {{ isEditMode ? 'Guardar cambios' : 'Crear Plantilla' }}
+               </button>
+      </div>
+    </form>
+  </div>
+</app-dashboard>

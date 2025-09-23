@@ -1,0 +1,156 @@
+@use 'assets/_colors' as colors;
+
+// Container for the entire list
+.notifications-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// Notifications List
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+
+// Notification Item
+.notification-item {
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  border: 1px solid colors.$base-color-01 !important;
+  background-color: colors.$white-color !important;
+  padding: 0 !important; // Remove default card padding
+  min-height: 136px;
+}
+
+.notification-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 8px 8px 12px 16px; // Reduced top padding, reduced right padding
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 136px;
+  position: relative; // For absolute positioning of close button
+}
+
+// Notification Text
+.notification-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+  overflow: hidden;
+}
+
+.notification-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: colors.$secondary-color;
+  margin: 0;
+}
+
+.notification-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: colors.$secondary-color-20;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; // Limit to 3 lines
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notification-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.notification-timestamp {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  color: colors.$secondary-color-20;
+  opacity: 0.6;
+}
+
+// Notification Actions
+.notification-actions {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.close-button {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  border-radius: 50% !important;
+  color: colors.$secondary-color-20 !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  &:hover {
+    background-color: rgba(colors.$secondary-color-20, 0.08) !important;
+    color: colors.$secondary-color !important;
+  }
+
+  ::ng-deep .mat-icon {
+    font-size: 18px !important;
+    width: 18px !important;
+    height: 18px !important;
+    line-height: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .notification-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 8px 16px 16px; // Keep close button positioning
+  }
+
+  .notification-actions {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .notification-footer {
+    align-items: flex-start;
+  }
+}

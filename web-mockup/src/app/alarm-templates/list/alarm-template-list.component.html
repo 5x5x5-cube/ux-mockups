@@ -1,0 +1,59 @@
+<!-- Dashboard Card Wrapper -->
+<app-dashboard title="Plantillas de Alarmas">
+  <!-- Search and Create Section -->
+  <div class="search-create-section">
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <mat-icon class="search-icon">search</mat-icon>
+      <input
+        type="text"
+        placeholder="Buscar plantillas"
+        [(ngModel)]="searchQuery"
+        (input)="onSearchChange()"
+        class="search-input">
+    </div>
+
+    <!-- Create Button -->
+    <button
+      mat-raised-button
+      class="create-button"
+      (click)="onCreateTemplate()">
+      <mat-icon>add</mat-icon>
+      Crear Plantilla
+    </button>
+  </div>
+
+  <!-- Data Table -->
+  <div class="data-table-container">
+    <mat-card class="table-card">
+      <!-- Table Header -->
+      <div class="table-header">
+        <div class="table-header-row">
+          <div class="table-cell header-cell">Nombre</div>
+          <div class="table-cell header-cell">Acciones</div>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+
+      <!-- Table Body -->
+      <div class="table-body">
+        <div
+          *ngFor="let template of filteredTemplates; let last = last; let i = index"
+          class="table-row-container">
+          <div class="table-row">
+            <div class="table-cell">{{ template.name }}</div>
+            <div class="table-cell">
+              <button
+                mat-button
+                class="edit-button"
+                (click)="onEditTemplate(template.id)">
+                Editar
+              </button>
+            </div>
+          </div>
+          <mat-divider *ngIf="!last" class="row-divider"></mat-divider>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</app-dashboard>

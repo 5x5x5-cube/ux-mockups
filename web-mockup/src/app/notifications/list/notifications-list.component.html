@@ -1,0 +1,33 @@
+<!-- Dashboard Card Wrapper -->
+<app-dashboard title="Notificaciones">
+  <div class="notifications-container">
+    <div class="notifications-list">
+      <mat-card 
+        *ngFor="let notification of notifications; let last = last" 
+        class="notification-item">
+        
+        <!-- Notification Content -->
+        <div class="notification-content">
+          <div class="notification-text">
+            <h3 class="notification-title">{{ notification.title }}</h3>
+            <p class="notification-description">{{ notification.description }}</p>
+            <div class="notification-footer">
+              <span class="notification-timestamp">{{ notification.timestamp }}</span>
+            </div>
+          </div>
+          
+          <!-- Close Button -->
+          <div class="notification-actions">
+            <button
+              mat-icon-button
+              class="close-button"
+              (click)="onCloseNotification(notification.id)"
+              [attr.aria-label]="'Cerrar notificación ' + notification.id">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</app-dashboard>

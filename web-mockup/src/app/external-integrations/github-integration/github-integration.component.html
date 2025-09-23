@@ -1,0 +1,29 @@
+<div class="github-integration-container">
+  <div class="hero-section">
+    <div class="hero-content">
+      <!-- Title -->
+      <div class="title-section">
+        <h1 class="hero-title">{{ appName }}</h1>
+        <p class="hero-subtitle">
+          Autoriza a la aplicación "Alarmas IT" para obtener información de issues de sus proyectos?
+        </p>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="button-group">
+        <button
+          mat-button
+          class="cancel-button"
+          (click)="onCancel()">
+          Cancelar
+        </button>
+        <button
+          mat-raised-button
+          class="authorize-button"
+          (click)="onAuthorize()">
+          Autorizar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

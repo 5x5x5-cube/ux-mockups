@@ -1,0 +1,62 @@
+<div class="login-container">
+  <!-- Title -->
+  <h1 class="app-title">
+    <span class="title-medium">Alarmas</span>
+    <span class="title-bold"> IT</span>
+  </h1>
+
+  <!-- Login Card -->
+  <mat-card class="login-card">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <!-- Username Field -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Usuario</mat-label>
+        <input 
+          matInput 
+          type="text" 
+          formControlName="username"
+          placeholder="Ingresa tu nombre de usuario"
+          required>
+      </mat-form-field>
+
+      <!-- Password Field -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input 
+          matInput 
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+          placeholder="Ingresa tu contraseña"
+          required>
+        <button 
+          mat-icon-button 
+          matSuffix 
+          type="button"
+          (click)="togglePasswordVisibility()"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hidePassword">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <!-- Login Button -->
+      <button 
+        mat-raised-button 
+        type="submit" 
+        class="login-button"
+        [disabled]="!loginForm.valid">
+        Iniciar Sesión
+      </button>
+
+      <!-- Create Account Link -->
+      <div class="create-account-container">
+        <a 
+          href="#"
+          class="create-account-link"
+          (click)="onCreateAccount(); $event.preventDefault()">
+          Crear cuenta
+        </a>
+      </div>
+    </form>
+  </mat-card>
+</div>

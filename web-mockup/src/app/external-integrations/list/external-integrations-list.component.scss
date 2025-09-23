@@ -1,0 +1,211 @@
+@use 'assets/_colors' as colors;
+
+// Integrations Container
+.integrations-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// Integrations List
+.integrations-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+}
+
+// Integration Item
+.integration-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 88px;
+  background-color: colors.$white-color;
+}
+
+// Integration Content
+.integration-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// Integration Logo
+.integration-logo {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: colors.$white-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: transparent;
+  padding: 4px;
+}
+
+// Integration Info
+.integration-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0; // Prevent flex item from overflowing
+}
+
+.integration-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: colors.$secondary-color;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.integration-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: colors.$secondary-color-20;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Integration Actions
+.integration-actions {
+  flex-shrink: 0;
+  width: 140px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Connect Button
+.connect-button {
+  background-color: colors.$base-color !important;
+  color: colors.$base-color-05 !important;
+  border-radius: 16px !important;
+  height: 56px !important;
+  padding: 16px 24px !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  letter-spacing: 0.15px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+  box-shadow: none !important;
+  border: none !important;
+  width: 100% !important;
+
+  &:hover {
+    background-color: colors.$base-color-130 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(colors.$base-color, 0.3) !important;
+  }
+
+  &:disabled {
+    background-color: rgba(colors.$base-color, 0.3) !important;
+    color: rgba(colors.$base-color-05, 0.5) !important;
+  }
+}
+
+// Disconnect Button
+.disconnect-button {
+  background-color: transparent !important;
+  color: colors.$base-color-130 !important;
+  border: 1px solid colors.$base-color-10 !important;
+  border-radius: 16px !important;
+  height: 56px !important;
+  padding: 16px 24px !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  letter-spacing: 0.15px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+  box-shadow: none !important;
+  width: 100% !important;
+
+  &:hover {
+    background-color: rgba(colors.$base-color-130, 0.08) !important;
+    border-color: colors.$base-color-130 !important;
+  }
+}
+
+// Integration Divider
+.integration-divider {
+  margin: 0;
+  
+  ::ng-deep .mat-divider {
+    border-top-color: #cac4d0;
+  }
+}
+
+
+// Responsive Design
+@media (max-width: 768px) {
+  .integration-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .integration-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .integration-info {
+    width: 100%;
+  }
+
+  .integration-name {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  .integration-description {
+    -webkit-line-clamp: 3;
+  }
+
+  .integration-actions {
+    width: 100%;
+    height: auto;
+  }
+
+  .connect-button,
+  .disconnect-button {
+    width: 100% !important;
+  }
+}

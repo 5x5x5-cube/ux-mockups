@@ -1,0 +1,108 @@
+@use 'assets/_colors' as colors;
+
+// Success Modal
+.success-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.success-modal {
+  background-color: colors.$base-color-00;
+  border-radius: 28px;
+  box-shadow: 0px 4px 4px 0px rgba(73, 69, 79, 0.16);
+  max-width: 560px;
+  min-width: 280px;
+  width: 100%;
+  margin: 0 16px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal-header {
+  padding: 24px 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  color: colors.$secondary-color;
+  margin: 0;
+}
+
+.modal-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: colors.$secondary-color-20;
+  margin: 0;
+}
+
+.underline-text {
+  text-decoration: underline;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.modal-actions {
+  padding: 20px 24px 20px 8px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.accept-button {
+  background-color: colors.$base-color !important;
+  color: colors.$white-color !important;
+  border-radius: 100px !important;
+  height: 48px !important;
+  padding: 10px 16px !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+  letter-spacing: 0.1px !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+
+  &:hover {
+    background-color: colors.$base-color-130 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(colors.$base-color, 0.3) !important;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .success-modal {
+    margin: 0 8px;
+    border-radius: 16px;
+  }
+
+  .modal-header {
+    padding: 20px 20px 0 20px;
+  }
+
+  .modal-actions {
+    padding: 16px 20px 20px 8px;
+  }
+}

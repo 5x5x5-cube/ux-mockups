@@ -1,0 +1,12 @@
+<!-- Dashboard Card -->
+<mat-card class="dashboard-card">
+  <!-- Card Header -->
+  <div class="card-header" *ngIf="title">
+    <h2 class="card-title">{{ title }}</h2>
+  </div>
+
+  <!-- Card Content -->
+  <div class="card-content">
+    <ng-content></ng-content>
+  </div>
+</mat-card>

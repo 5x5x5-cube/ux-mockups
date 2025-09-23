@@ -1,0 +1,22 @@
+<!-- Success Modal -->
+<div class="success-modal-overlay">
+  <div class="success-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Integración con {{ appName }} exitosa!</h2>
+        <p class="modal-description">
+          Todas las tareas e issues serán sincronizadas y estarán disponibles en la sección de 
+          <span class="underline-text">Tareas</span>
+        </p>
+      </div>
+      <div class="modal-actions">
+        <button
+          mat-raised-button
+          class="accept-button"
+          (click)="onAccept()">
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

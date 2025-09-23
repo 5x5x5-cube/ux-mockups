@@ -1,0 +1,118 @@
+<div class="main-layout-container">
+  <!-- Mobile Header -->
+  <div *ngIf="isMobile" class="mobile-header">
+    <button 
+      class="mobile-menu-button"
+      (click)="toggleCollapse()"
+      [class.open]="isMobileMenuOpen">
+      <mat-icon>{{ isMobileMenuOpen ? 'close' : 'menu_open' }}</mat-icon>
+    </button>
+    
+    <h1 class="mobile-app-title">
+      <span class="title-medium">Alarmas</span>
+      <span class="title-bold"> IT</span>
+    </h1>
+  </div>
+
+  <!-- Mobile Overlay -->
+  <div 
+    *ngIf="isMobile && isMobileMenuOpen" 
+    class="mobile-overlay"
+    (click)="closeMobileMenu()">
+  </div>
+
+  <!-- Navigation Rail -->
+  <div 
+    *ngIf="!isMobile || isMobileMenuOpen"
+    class="navigation-rail" 
+    [class.collapsed]="isCollapsed" 
+    [class.mobile]="isMobile"
+    [class.mobile-open]="isMobile && isMobileMenuOpen">
+    <!-- App Title -->
+    <div class="app-title-section" *ngIf="!isCollapsed || (isMobile && isMobileMenuOpen)">
+      <h1 class="app-title">
+        <span class="title-medium">Alarmas</span>
+        <span class="title-bold"> IT</span>
+      </h1>
+    </div>
+    
+    <!-- Collapsed App Title -->
+    <div class="app-title-section collapsed" *ngIf="isCollapsed && !(isMobile && isMobileMenuOpen)">
+      <h1 class="app-title-collapsed">A</h1>
+    </div>
+    
+    <!-- Toggle Button -->
+    <button 
+      *ngIf="!isMobile"
+      class="toggle-button" 
+      (click)="toggleCollapse()"
+      [title]="isCollapsed ? 'Expand navigation' : 'Collapse navigation'">
+      <mat-icon>{{ isCollapsed ? 'menu' : 'menu_open' }}</mat-icon>
+    </button>
+
+    <!-- User Profile Card -->
+    <div class="user-profile-card" [class.collapsed]="isCollapsed && !(isMobile && isMobileMenuOpen)">
+      <div class="user-avatar">
+        <div class="avatar-background">
+          <span class="avatar-text">A</span>
+        </div>
+      </div>
+      <div class="user-info" *ngIf="!isCollapsed || (isMobile && isMobileMenuOpen)">
+        <p class="user-name">Usuario</p>
+        <p class="user-email">usuario@example.com</p>
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="navigation-menu">
+      <!-- Main Menu Items -->
+      <div class="main-menu-section">
+        <a 
+          *ngFor="let item of menuItems" 
+          class="nav-item"
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: false}"
+          [title]="isCollapsed ? item.label : ''"
+          (click)="isMobile && closeMobileMenu()">
+          <div class="nav-item-content">
+            <mat-icon class="nav-icon">{{ item.icon }}</mat-icon>
+            <span class="nav-label" *ngIf="!isCollapsed || (isMobile && isMobileMenuOpen)">{{ item.label }}</span>
+            <span *ngIf="item.badge && (!isCollapsed || (isMobile && isMobileMenuOpen))" class="nav-badge">{{ item.badge }}</span>
+            <span *ngIf="item.badge && isCollapsed && !(isMobile && isMobileMenuOpen)" class="nav-badge-collapsed">{{ item.badge }}</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Spacer to push settings to bottom -->
+      <div class="menu-spacer"></div>
+
+      <!-- Divider -->
+      <mat-divider class="menu-divider"></mat-divider>
+
+      <!-- Settings Menu Items -->
+      <div class="settings-menu-section">
+        <a 
+          *ngFor="let item of settingsItems" 
+          class="nav-item"
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: false}"
+          [title]="isCollapsed ? item.label : ''"
+          (click)="isMobile && closeMobileMenu()">
+          <div class="nav-item-content">
+            <mat-icon class="nav-icon">{{ item.icon }}</mat-icon>
+            <span class="nav-label" *ngIf="!isCollapsed || (isMobile && isMobileMenuOpen)">{{ item.label }}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- Content Card -->
+      <!-- Router Outlet for child components -->
+      <router-outlet></router-outlet>
+  </div>
+</div>

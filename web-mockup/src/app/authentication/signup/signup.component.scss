@@ -1,0 +1,184 @@
+@use '../../../../assets/_colors' as colors;
+
+.signup-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background-color: colors.$white-color;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 24px;
+  background-color: colors.$white-color;
+}
+
+.app-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 57px;
+  font-weight: 800;
+  line-height: 64px;
+  letter-spacing: -0.25px;
+  color: colors.$secondary-color;
+  margin: 0;
+  text-align: center;
+
+  .title-medium {
+    font-weight: 500;
+  }
+
+  .title-bold {
+    font-weight: 800;
+  }
+}
+
+.signup-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+.signup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 444px;
+}
+
+.signup-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  color: colors.$secondary-color;
+  margin: 0;
+  text-align: left;
+}
+
+.signup-card {
+  background-color: colors.$white-color;
+  border-radius: 12px;
+  padding: 32px 24px;
+  width: 100%;
+  box-shadow: none;
+  border: 1px solid #cac4d0;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+// Custom Material form field styling to match Figma design
+::ng-deep .mat-mdc-form-field {
+  .mat-mdc-form-field-outline {
+    color: colors.$secondary-color-20;
+  }
+
+  .mat-mdc-form-field-label {
+    color: colors.$secondary-color-20;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+  }
+
+  .mat-mdc-input-element {
+    color: colors.$secondary-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .mat-mdc-form-field-hint {
+    color: #49454f;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .mat-mdc-form-field-error {
+    color: colors.$danger-color;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+  }
+}
+
+.signup-button {
+  background-color: colors.$base-color !important;
+  color: colors.$base-color-05 !important;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  border-radius: 12px;
+  height: 48px;
+  width: 100%;
+  text-transform: none;
+
+  &:hover {
+    background-color: colors.$base-color-130 !important;
+  }
+
+  &:disabled {
+    background-color: #cac4d0 !important;
+    color: #49454f !important;
+  }
+}
+
+.image-column {
+  display: flex;
+  align-items: center;
+  background-color: colors.$base-color-10;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: colors.$base-color-10;
+  overflow: hidden;
+}
+
+.hero-image {
+  flex: 1;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+// Responsive design
+@media screen and (max-width: 768px) {
+  .signup-container {
+    grid-template-columns: 1fr;
+  }
+
+  .image-column {
+    display: none;
+  }
+
+  .form-column {
+    flex: 1;
+    padding: 24px;
+  }
+}
