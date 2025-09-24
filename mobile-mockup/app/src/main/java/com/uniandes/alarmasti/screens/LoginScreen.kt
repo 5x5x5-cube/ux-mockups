@@ -67,7 +67,7 @@ fun LoginScreen(navController: NavController) {
 
                 Button(
                     onClick = {
-                        // Navegar al main con bottom nav
+                       
                         navController.navigate(RootScreen.Main.route) {
                             popUpTo(RootScreen.Login.route) { inclusive = true }
                         }
@@ -87,7 +87,7 @@ fun LoginScreen(navController: NavController) {
 
                 OutlinedButton(
                     onClick = {
-                        // Navegar a crear cuenta
+                       
                         navController.navigate(RootScreen.CreateAccount.route)
                     },
                     modifier = Modifier

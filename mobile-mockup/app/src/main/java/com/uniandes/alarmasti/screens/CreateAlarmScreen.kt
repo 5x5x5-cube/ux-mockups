@@ -175,7 +175,7 @@ fun TimePickerWithAmPm(
         horizontalArrangement = Arrangement.Center,
         modifier = Modifier.fillMaxWidth()
     ) {
-        // Hora
+        
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             TimeSquareField(text = hourText, onTextChange = { new ->
                 hourText = new

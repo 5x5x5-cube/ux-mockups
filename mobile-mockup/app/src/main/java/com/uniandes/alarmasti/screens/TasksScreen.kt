@@ -48,7 +48,7 @@ fun TasksScreen(bottomNavController: NavHostController,
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { /* TODO: Agregar tarea */ },
-                containerColor = Color(0xFF4A3CFF) // Morado fuerte
+                containerColor = Color(0xFF4A3CFF) 
             ) {
                 Text("+", color = Color.White, style = MaterialTheme.typography.titleLarge)
             }
@@ -72,7 +72,7 @@ fun TaskItem(title: String, time: String) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFFCBCAE9)) // Lila exacto
+        colors = CardDefaults.cardColors(containerColor = Color(0xFFCBCAE9)) 
     ) {
         Row(
             modifier = Modifier
@@ -89,7 +89,7 @@ fun TaskItem(title: String, time: String) {
             ) {
                 Box(contentAlignment = Alignment.Center) {
                     Text(
-                        text = title.first().toString(), // Inicial de la tarea
+                        text = title.first().toString(), 
                         color = Color.White,
                         style = MaterialTheme.typography.titleMedium
                     )

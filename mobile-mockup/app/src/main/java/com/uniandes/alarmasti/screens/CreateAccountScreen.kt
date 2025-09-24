@@ -76,7 +76,7 @@ fun CreateAccountScreen(navController: NavController) {
 
             Button(
                 onClick = {
-                    // 👇 Navegar al Main y limpiar el backstack (para que no vuelva a login/crear cuenta)
+                    
                     navController.navigate(RootScreen.Main.route) {
                         popUpTo(RootScreen.Login.route) { inclusive = true }
                     }

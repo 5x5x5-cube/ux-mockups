@@ -72,7 +72,7 @@ fun MeetingItem(title: String, time: String) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFFCBCAE9)) // Lila
+        colors = CardDefaults.cardColors(containerColor = Color(0xFFCBCAE9)) 
     ) {
         Row(
             modifier = Modifier
@@ -84,12 +84,12 @@ fun MeetingItem(title: String, time: String) {
             // Avatar redondo con inicial
             Surface(
                 shape = CircleShape,
-                color = Color(0xFF4A3CFF), // Morado fuerte
+                color = Color(0xFF4A3CFF), 
                 modifier = Modifier.size(40.dp),
             ) {
                 Box(contentAlignment = Alignment.Center) {
                     Text(
-                        text = title.first().toString(), // Inicial dinámica
+                        text = title.first().toString(), 
                         color = Color.White,
                         style = MaterialTheme.typography.titleMedium
                     )
