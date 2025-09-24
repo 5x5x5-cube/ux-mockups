@@ -44,6 +44,32 @@ npm install
 npm start
 ```
 
+
+### Mobile Mockup (`mobile-mockup/`)
+Aplicación movil desarrollada en Kotlin que simula la interfaz de usuario de Alarmas IT.
+
+
+**Características principales:**
+- Sistema de autenticación (login/signup)
+- Screen de alarmas
+- Screen de tareas
+- Screen de reuniones
+- Screen de edicion o creacion de alarmas
+- Screen de creacion de cuenta
+
+**Tecnologías:**
+- Fotlin
+- Android con Compose
+
+## Inicio Rápido
+
+Generar apk para release:
+
+```bash
+cd mobile-mockup
+./gradlew assembleRelease
+```
+
 **📖 Para instrucciones detalladas de instalación, configuración y desarrollo, consulta el [README del proyecto web](web-mockup/README.md).**
 
 ## Contribución

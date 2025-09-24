@@ -14,31 +14,29 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.uniandes.alarmasti.navigation.BottomNavScreen
 import com.uniandes.alarmasti.navigation.AlarmNavScreen
-
 @Composable
-fun MainScreen() {
-    val navController = rememberNavController()
+fun MainScreen(rootNavController: NavHostController) {
+    val bottomNavController = rememberNavController()
 
     Scaffold(
         bottomBar = {
-            BottomNavigationBar(navController = navController)
+            BottomNavigationBar(navController = bottomNavController)
         }
     ) { paddingValues ->
         Box(modifier = Modifier.padding(paddingValues)) {
             NavHost(
-                navController = navController,
+                navController = bottomNavController,
                 startDestination = BottomNavScreen.Alarms.route
             ) {
-                // Pantallas de bottom nav
-                composable(BottomNavScreen.Alarms.route) { AlarmsScreen(navController) }
-                composable(BottomNavScreen.Tasks.route) { TasksScreen(navController) }
-                composable(BottomNavScreen.Meetings.route) { MeetingsScreen(navController) }
-
-                composable(AlarmNavScreen.CreateAlarm.route) { CreateAlarmScreen(navController) }
+                composable(BottomNavScreen.Alarms.route) {AlarmsScreen(bottomNavController, rootNavController) }
+                composable(BottomNavScreen.Tasks.route) { TasksScreen(bottomNavController, rootNavController) }
+                composable(BottomNavScreen.Meetings.route) { MeetingsScreen(bottomNavController, rootNavController) }
+                composable(AlarmNavScreen.CreateAlarm.route) { CreateAlarmScreen(bottomNavController) }
             }
         }
     }
 }
+
 
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {

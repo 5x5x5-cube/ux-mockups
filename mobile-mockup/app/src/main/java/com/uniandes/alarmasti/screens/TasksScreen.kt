@@ -12,11 +12,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.uniandes.alarmasti.ui.AppTopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TasksScreen(navController: NavController) {
+fun TasksScreen(bottomNavController: NavHostController,
+                rootNavController: NavHostController
+) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -28,11 +31,8 @@ fun TasksScreen(navController: NavController) {
                 actions = {
                     IconButton(
                         onClick = {
-                            navController.navigate("login") {
-                                popUpTo(navController.graph.startDestinationId) {
-                                    inclusive = true
-                                }
-                                launchSingleTop = true
+                            rootNavController.navigate("login") {
+                                popUpTo("main") { inclusive = true }
                             }
                         }
                     ) {

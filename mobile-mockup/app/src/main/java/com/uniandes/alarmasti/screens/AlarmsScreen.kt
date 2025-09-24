@@ -13,10 +13,12 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.uniandes.alarmasti.navigation.AlarmNavScreen
 import com.uniandes.alarmasti.ui.AppTopBar
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AlarmsScreen(navController: NavHostController) {
+fun AlarmsScreen(
+    bottomNavController: NavHostController,
+    rootNavController: NavHostController
+) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -28,8 +30,8 @@ fun AlarmsScreen(navController: NavHostController) {
                 actions = {
                     IconButton(
                         onClick = {
-                            navController.navigate("login") {
-
+                            rootNavController.navigate("login") {
+                                popUpTo("main") { inclusive = true }
                             }
                         }
                     ) {
@@ -44,7 +46,7 @@ fun AlarmsScreen(navController: NavHostController) {
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { navController.navigate(AlarmNavScreen.CreateAlarm.route) },
+                onClick = { bottomNavController.navigate(AlarmNavScreen.CreateAlarm.route) },
                 containerColor = Color(0xFF4A3CFF),
                 shape = RoundedCornerShape(50)
             ) {
@@ -58,26 +60,25 @@ fun AlarmsScreen(navController: NavHostController) {
                 .padding(16.dp)
         ) {
             Spacer(modifier = Modifier.height(36.dp))
-            AlarmItem("09:00 AM", "Levantarse", navController)
+            AlarmItem("09:00 AM", "Levantarse", bottomNavController)
             Spacer(modifier = Modifier.height(20.dp))
-            AlarmItem("12:00 AM", "Tareas diarias", navController)
+            AlarmItem("12:00 AM", "Tareas diarias", bottomNavController)
         }
     }
 }
-
 
 @Composable
 fun AlarmItem(
     time: String,
     label: String,
-    navController: NavHostController
+    bottomNavController: NavHostController
 ) {
     var isEnabled by remember { mutableStateOf(true) }
 
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable { navController.navigate(AlarmNavScreen.CreateAlarm.route) }, // 👉 Navegar al crear alarma
+            .clickable { bottomNavController.navigate(AlarmNavScreen.CreateAlarm.route) },
         shape = RoundedCornerShape(12.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
         colors = CardDefaults.cardColors(containerColor = Color(0xFFD0CFEA))
@@ -111,4 +112,3 @@ fun AlarmItem(
         }
     }
 }
-

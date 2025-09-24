@@ -36,9 +36,10 @@ class MainActivity : ComponentActivity() {
                             CreateAccountScreen(navController)
                         }
                         composable(RootScreen.Main.route) {
-                            MainScreen()
+                            MainScreen(rootNavController = navController) // 👈 pasamos el root
                         }
                     }
+
                 }
             }
         }
