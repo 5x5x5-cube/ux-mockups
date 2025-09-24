@@ -47,8 +47,8 @@ npm start
 
 ### Mobile Mockup (`mobile-mockup/`)
 Aplicación movil desarrollada en Kotlin que simula la interfaz de usuario de Alarmas IT.
-<img width="355" height="742" alt="image" src="https://github.com/user-attachments/assets/fe7287bf-b083-4d64-affe-3154ade9e5de" />
 
+<img width="355" height="742" alt="image" src="https://github.com/user-attachments/assets/fe7287bf-b083-4d64-affe-3154ade9e5de" />
 
 **Características principales:**
 - Sistema de autenticación (login/signup)
